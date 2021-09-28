@@ -56,9 +56,11 @@ This program display the duplicate of the user input.");
                         Console.WriteLine ();
                         Console.WriteLine (@"You selected Time Determinant
 This program determine the validity of  time value input.");
-                        Console.WriteLine ("Enter a time value in 24 hours format (e.g 19:00). ");
-                        //Console.WriteLine();
-                        Console.WriteLine (DateTime_and_Strings.TimeDeterminant ()); // Accessing TimeDeterminant method of DateTime_and_Strings class
+                        Console.WriteLine ("Enter a time value in 24 hours format between 00:00 and 23:59 (e.g 19:00). ");
+
+                        var timeInput = Console.ReadLine ().Trim ();
+
+                        Console.WriteLine (DateTime_and_Strings.TimeDeterminant (timeInput)); // Accessing TimeDeterminant method of DateTime_and_Strings class
                         Console.WriteLine ();
                         continue;
 

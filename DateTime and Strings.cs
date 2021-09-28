@@ -77,10 +77,30 @@ namespace Working_With_Dates_and_Text
             
         }
 
-        public static string TimeDeterminant()
+        public static string TimeDeterminant(string timeValue)
         {
-            return "Duplicate Numbers";
-            
+            //var dateTime = Convert.ToDateTime (timeValue);
+
+            if ( string.IsNullOrWhiteSpace (timeValue) )
+            {
+                Console.WriteLine ("Invalid Input");
+
+            }
+
+            else
+            {
+                var hour = Convert.ToInt32 (timeValue.Split (':')[0]);
+                var minute = Convert.ToInt32 (timeValue.Split (':')[1]);
+
+                if ( ( hour > 0 & hour <= 23 ) && ( minute > 0 & minute <= 59 ) )
+                    return $"Ok, the time value: {timeValue} is a valid 24 hours time input.";
+
+                //else
+
+            }
+
+            return $"The time value input of {timeValue} is an \"Invalid Time\" ";
+
         }
 
         public static string PascalCase()
